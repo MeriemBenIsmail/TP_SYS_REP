@@ -1,6 +1,7 @@
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
+
 public class send {
 
     private final static String QUEUE_NAME = "hello";
@@ -15,7 +16,7 @@ public class send {
 
         {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            String message = "Hi Meriem !";
+            String message = "Hi Maryouma, momo and nochnoch !";
 
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
             System.out.println(" [x] Sent '" + message + "'");
